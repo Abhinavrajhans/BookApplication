@@ -28,7 +28,11 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public BookResponseDTO getBookByName(String name){
-        return BookAdapter.toDTO(bookRepository.findBookByName(name));
+        Book book = bookRepository.findBookByName(name);
+        if (book == null) {
+            throw new RuntimeException("Book Not Found");
+        }
+        return BookAdapter.toDTO(book);
     }
 
     @Override

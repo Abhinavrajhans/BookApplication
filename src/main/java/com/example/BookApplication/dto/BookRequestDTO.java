@@ -1,8 +1,6 @@
 package com.example.BookApplication.dto;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 
@@ -12,7 +10,13 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BookRequestDTO {
+
+    @NotBlank(message="name is Required")
     private String name;
+
+    @NotBlank(message="name is Required")
     private String author;
+
+    @NotBlank(message="name is Required")
     private String genre;
 }

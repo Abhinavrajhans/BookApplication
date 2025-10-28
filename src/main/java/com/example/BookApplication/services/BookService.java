@@ -1,9 +1,7 @@
 package com.example.BookApplication.services;
 
-import com.example.BookApplication.adapters.BookAdapter;
 import com.example.BookApplication.dto.BookRequestDTO;
 import com.example.BookApplication.dto.BookResponseDTO;
-import com.example.BookApplication.models.Book;
 
 public interface BookService {
 

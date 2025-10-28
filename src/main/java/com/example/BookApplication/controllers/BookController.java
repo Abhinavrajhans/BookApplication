@@ -2,7 +2,6 @@ package com.example.BookApplication.controllers;
 
 import com.example.BookApplication.dto.BookRequestDTO;
 import com.example.BookApplication.dto.BookResponseDTO;
-import com.example.BookApplication.models.Book;
 import com.example.BookApplication.services.BookServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -35,7 +34,7 @@ public class BookController {
     }
 
     @PutMapping("/updateBook/{id}")
-    public ResponseEntity<BookResponseDTO> updateBook(@PathVariable int id, @RequestBody BookRequestDTO bookRequestDTO)
+    public ResponseEntity<BookResponseDTO> updateBook(@PathVariable int id, @Valid @RequestBody BookRequestDTO bookRequestDTO)
     {
         return ResponseEntity.ok(bookService.updateBookById(id,bookRequestDTO));
     }
