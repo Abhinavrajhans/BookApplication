@@ -7,6 +7,7 @@ import com.example.BookApplication.models.Book;
 import com.example.BookApplication.repositories.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -15,8 +16,10 @@ public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
 
     @Override
+    @Transactional
     public BookResponseDTO createBook(BookRequestDTO bookRequestDTO)
     {
+        System.out.println("Inside createBook and creating book");
         return BookAdapter.toDTO(bookRepository.save(BookAdapter.toEntity(bookRequestDTO)));
     }
 
