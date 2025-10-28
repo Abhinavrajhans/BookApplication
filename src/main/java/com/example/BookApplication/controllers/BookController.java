@@ -43,7 +43,7 @@ public class BookController {
     public ResponseEntity<Void>  deleteBook(@PathVariable int id)
     {
             bookService.deleteBookById(id);
-            return ResponseEntity.noContent().build();
+            return ResponseEntity.ok().build();
     }
 
 
