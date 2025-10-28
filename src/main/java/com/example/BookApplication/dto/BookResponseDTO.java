@@ -18,5 +18,4 @@ public class BookResponseDTO {
     private String author;
     private String genre;
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 }
